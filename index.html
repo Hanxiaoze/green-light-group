@@ -67,7 +67,7 @@
             left: 0;
             animation: bounce 25s infinite linear;
         }
-        .group_photo{
+        .group_photo {
             animation: floatPhoto 3s infinite ease-in-out; /* 添加浮动动画 */
         }
         /* 动画效果 */
@@ -91,10 +91,19 @@
         }
         @keyframes floatPhoto {
             0%, 100% {
-                transform: translateX(0);
+                transform: translate(0, 0); /* 初始位置 */
+            }
+            25% {
+                transform: translate(-35px, 0); /* 左移动 */
             }
             50% {
-                transform: translateX(-35px);
+                transform: translate(0, -35px); /* 上移动 */
+            }
+            75% {
+                transform: translate(35px, 0); /* 右移动 */
+            }
+            100% {
+                transform: translate(0, 35px); /* 下移动 */
             }
         }
         @keyframes bounce {
